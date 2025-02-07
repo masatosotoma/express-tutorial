@@ -18,12 +18,15 @@ router
   .get((req, res) => {
     res.send(`Get User with ID ${req.params.id}`);
   })
-  .put("/:id", (req, res) => {
+  .put((req, res) => {
     res.send(`Update User with ID ${req.params.id}`);
   })
-  .delete("/:id", (req, res) => {
+  .delete((req, res) => {
     res.send(`Delete User with ID ${req.params.id}`);
   });
 
+router.param("id", (req, res, next, id) => {
+  console.log(id);
+});
 
 module.exports = router;
