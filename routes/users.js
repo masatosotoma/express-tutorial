@@ -25,8 +25,11 @@ router
     res.send(`Delete User with ID ${req.params.id}`);
   });
 
+const users = [{ name: "Kyle" }, { name: "Sally" }];
+
 router.param("id", (req, res, next, id) => {
-  console.log(id);
+  req.user - users[id];
+  next();
 });
 
 module.exports = router;
