@@ -16,6 +16,7 @@ router.post("/", (req, res) => {
 router
   .route("/:id")
   .get((req, res) => {
+    console.log(req.user);
     res.send(`Get User with ID ${req.params.id}`);
   })
   .put((req, res) => {
